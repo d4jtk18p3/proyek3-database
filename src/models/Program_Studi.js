@@ -6,6 +6,14 @@ const Prodi = db.define('Program_Studi', {
     type: Sequelize.STRING,
     allowNull: false,
     primaryKey: true
+  },
+  nip: {
+    type: Sequelize.STRING(30),
+    allowNull: false
+  },
+  kode_jurusan: {
+    type: Sequelize.STRING,
+    allowNull: false
   }
 })
 
