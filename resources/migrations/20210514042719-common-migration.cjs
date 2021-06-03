@@ -90,7 +90,7 @@ module.exports = {
     })
     await queryInterface.createTable('Mata_Kuliah', {
       id: {
-        type: Sequelize.STRING(8),
+        type: Sequelize.STRING(12),
         allowNull: false,
         primaryKey: true,
       },
