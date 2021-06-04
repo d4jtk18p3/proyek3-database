@@ -183,7 +183,7 @@ module.exports = {
 
     await queryInterface.createTable('Mahasiswa', {
       nim: {
-        type: Sequelize.STRING(15),
+        type: Sequelize.INTEGER,
         allowNull: false,
         primaryKey: true
       },
@@ -230,7 +230,7 @@ module.exports = {
         },
       },
       id_mahasiswa: {
-        type: Sequelize.STRING(15),
+        type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: 'Mahasiswa',
