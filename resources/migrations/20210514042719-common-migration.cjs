@@ -4,16 +4,21 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('Jabatan', {
       id: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true
+      },
+      nama_jabatan: {
         type: Sequelize.STRING,
         allowNull: false,
-        primaryKey: true
       },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE
     })
     await queryInterface.createTable('Tata_Usaha', {
       nip: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.INTEGER,
         allowNull: false,
         primaryKey: true
       },
@@ -26,7 +31,7 @@ module.exports = {
     })
     await queryInterface.createTable('Dosen', {
       nip: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.INTEGER,
         allowNull: false,
         primaryKey: true
       },
@@ -34,8 +39,21 @@ module.exports = {
         type: Sequelize.STRING(30),
         allowNull: false
       },
+      createdAt: Sequelize.DATE,
+      updatedAt: Sequelize.DATE
+    })
+
+    await queryInterface.createTable('Menjabat', {
+      nip: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+        references: {
+          model: 'Dosen',
+          key: 'nip'
+        }
+      },
       id_jabatan: {
-        type: Sequelize.STRING,
+        type: Sequelize.INTEGER,
         allowNull: true,
         references: {
           model: 'Jabatan',
@@ -53,7 +71,7 @@ module.exports = {
         primaryKey: true
       },
       nip: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: 'Dosen',
@@ -70,7 +88,7 @@ module.exports = {
         primaryKey: true
       },
       nip: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: 'Dosen',
@@ -101,7 +119,6 @@ module.exports = {
       nama_mata_kuliah: {
         type: Sequelize.STRING(50),
         allowNull: false,
-        unique: true
       },
       sks_teori: {
         type: Sequelize.INTEGER,
@@ -141,7 +158,7 @@ module.exports = {
         }
       },
       nip: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: 'Dosen',
@@ -163,7 +180,7 @@ module.exports = {
         allowNull: false
       },
       id_mata_kuliah: {
-        type: Sequelize.STRING(8),
+        type: Sequelize.STRING(12),
         references: {
           model: 'Mata_Kuliah',
           key: 'id'
@@ -243,7 +260,7 @@ module.exports = {
 
     await queryInterface.createTable('Pengajar', {
       nip: {
-        type: Sequelize.STRING(30),
+        type: Sequelize.INTEGER,
         allowNull: false,
         references: {
           model: 'Dosen',
@@ -286,6 +303,7 @@ module.exports = {
     await queryInterface.dropTable('Mata_Kuliah')
     await queryInterface.dropTable('Program_Studi')
     await queryInterface.dropTable('Jurusan')
+    await queryInterface.dropTable('Menjabat')
     await queryInterface.dropTable('Dosen')
     await queryInterface.dropTable('Tata_Usaha')
     await queryInterface.dropTable('Jabatan')
