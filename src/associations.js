@@ -36,7 +36,7 @@ const setAssociations = () => {
   perkuliahan.belongsToMany(dosen, {
     through: 'Pengajar'
   })
-  dosen.hasOne(kelas, {
+  dosen.hasMany(kelas, {
     foreignKey: 'nip'
   })
   dosen.hasMany(programStudi, {
@@ -46,7 +46,7 @@ const setAssociations = () => {
     foreignKey: 'nip'
   })
   dosen.hasMany(jabatan, {
-    foreignKey: 'id_jabatan'
+    through: 'menjabat'
   })
   programStudi.hasMany(mataKuliah, {
     foreignKey: 'kode_program_studi'

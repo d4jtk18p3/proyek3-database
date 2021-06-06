@@ -15,8 +15,7 @@ const mataKuliah = db.define('Mata_Kuliah', {
   },
   nama_mata_kuliah: {
     type: Sequelize.STRING(50),
-    allowNull: false,
-    unique: true
+    allowNull: false
   },
   sks_teori: {
     type: Sequelize.INTEGER,
