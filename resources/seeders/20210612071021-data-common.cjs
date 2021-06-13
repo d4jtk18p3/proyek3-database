@@ -12,8 +12,8 @@ module.exports = {
      * }], {});
     */
     await queryInterface.sequelize.query(
-      `insert into "Jabatan" (nama_jabatan)
-      values ('Wali Dosen'), ('Pengampu'), ('Ketua Jurusan'), ('Ketua Program Studi')`
+      `insert into "Jabatan" (id, nama_jabatan)
+      values (1, 'Wali Dosen'), (2, 'Pengampu'), (3, 'Ketua Jurusan'), (4, 'Ketua Program Studi')`
     )
     await queryInterface.sequelize.query(
       `insert into "Dosen" (nip, nama_dosen)
@@ -129,10 +129,35 @@ module.exports = {
       values 
       (181524001, 'si b', 1803, 'si.b.tif417@polban.ac.id', '08212212121', 'https://id.pinterest.com/pin/280700989263813088/'),
       (191511001, 'si c', 1901, 'si.c.tif417@polban.ac.id', '08212212121', 'https://id.pinterest.com/pin/280700989263813088/'),
-      (181524002, 'si m', 1803, 'si.m.tif417@polban.ac.id', '08212212121', 'https://id.pinterest.com/pin/280700989263813088/'),
+      (181524002, 'Alvira Putrina Daradjat', 1803, 'alvira.putrina.tif418@polban.ac.id', '08124125163', 'https://akademik.polban.ac.id/fotomhsrekap/181524002.jpg'),
       (191511003, 'si n', 1901, 'si.n.tif417@polban.ac.id', '08212212121', 'https://id.pinterest.com/pin/280700989263813088/'),
-      (181524003, 'si d', 1803, 'si.d.tif417@polban.ac.id', '08212212121', 'https://id.pinterest.com/pin/280700989263813088/'),
-      (191511002, 'si f', 1901, 'si.f.tif417@polban.ac.id', '08212212121', 'https://id.pinterest.com/pin/280700989263813088/')
+      (181524003, 'Ananda Bayu Fauzan', 1803, 'ananda.bayu.tif418@polban.ac.id', '08214124151', 'https://akademik.polban.ac.id/fotomhsrekap/181524003.jpg'),
+      (191511002, 'si f', 1901, 'si.f.tif417@polban.ac.id', '08212212121', 'https://id.pinterest.com/pin/280700989263813088/'),
+      (181524004, 'Chofief Al Farroqie A. E.', 1803, 'chofief.al.tif418@polban.ac.id', '08521846712', 'https://akademik.polban.ac.id/fotomhsrekap/181524004.jpg'),
+      (181524005, 'Dewanto Joyo Pramono', 1803, 'dewanto.joyo.tif418@polban.ac.id', '08521812312', 'https://akademik.polban.ac.id/fotomhsrekap/181524005.jpg'),
+      (181524006, 'Dwinanda Alfauzan Suhando', 1803, 'dwinanda.alfauzan.tif418@polban.ac.id', '08312312311', 'https://akademik.polban.ac.id/fotomhsrekap/181524006.jpg'),
+      (181524007, 'Evan Lokajaya', 1803, 'evan.lokajaya.tif418@polban.ac.id', '08521832121', 'https://akademik.polban.ac.id/fotomhsrekap/181524007.jpg'),
+      (181524008, 'Fatharani', 1803, 'fatharani.tif418@polban.ac.id', '08521832321', 'https://akademik.polban.ac.id/fotomhsrekap/181524008.jpg'),
+      (181524009, 'Fajrina Aflaha', 1803, 'fajrina.aflaha.tif418@polban.ac.id', '08141525244', 'https://akademik.polban.ac.id/fotomhsrekap/181524009.jpg'),
+      (181524010, 'Hafiz Muhammad Fadli', 1803, 'hafiz.muhammad.tif418@polban.ac.id', '08155555555', 'https://akademik.polban.ac.id/fotomhsrekap/181524010.jpg'),
+      (181524012, 'Hanifah Sholihat', 1803, 'hanifah.sholihat.tif418@polban.ac.id', '08166666666', 'https://akademik.polban.ac.id/fotomhsrekap/181524012.jpg'),
+      (181524013, 'Icha Cahya Wulan', 1803, 'icha.cahya.tif418@polban.ac.id', '08177777777', 'https://akademik.polban.ac.id/fotomhsrekap/181524013.jpg'),
+      (181524014, 'Khoirunnisa Putri Kania', 1803, 'khoirunnisa.putri.tif418@polban.ac.id', '08188888888', 'https://akademik.polban.ac.id/fotomhsrekap/181524014.jpg'),
+      (181524015, 'M. Andhika Zaini Zulfikor', 1803, 'm.andhika.tif418@polban.ac.id', '08141414141', 'https://akademik.polban.ac.id/fotomhsrekap/181524015.jpg'),
+      (181524016, 'Mohamad Naufal Fadhil', 1803, 'mohamad.naufal.tif418@polban.ac.id', '08121222222', 'https://akademik.polban.ac.id/fotomhsrekap/181524016.jpg'),
+      (181524017, 'Mufqi Uwais Nastiar Salim', 1803, 'mufqi.uwais.tif418@polban.ac.id', '08129341803', 'https://akademik.polban.ac.id/fotomhsrekap/181524017.jpg'),
+      (181524020, 'Muhammad Fadhil', 1803, 'muhammad.fadhil.tif418@polban.ac.id', '08128844444', 'https://akademik.polban.ac.id/fotomhsrekap/181524020.jpg'),
+      (181524021, 'Muhammad Hanif Albaihaqi', 1803, 'muhammad.hanif.tif418@polban.ac.id', '08109876577', 'https://akademik.polban.ac.id/fotomhsrekap/181524021.jpg'),
+      (181524022, 'Nadhilah Nurfajrina', 1803, 'nadhilah.nurfajrina.tif418@polban.ac.id', '08900000000', 'https://akademik.polban.ac.id/fotomhsrekap/181524022.jpg'),
+      (181524023, 'Nadia Melyani', 1803, 'nadia.melyani.tif418@polban.ac.id', '08974717277', 'https://akademik.polban.ac.id/fotomhsrekap/181524023.jpg'),
+      (181524025, 'Naufal Rajabi', 1803, 'naufal.rajabi.tif418@polban.ac.id', '08598768766', 'https://akademik.polban.ac.id/fotomhsrekap/181524025.jpg'),
+      (181524026, 'Raefaldhi Amartya Junior', 1803, 'raefaldhi.amartya.tif418@polban.ac.id', '08511223340', 'https://akademik.polban.ac.id/fotomhsrekap/181524026.jpg'),
+      (181524027, 'Raihan Ibrahim Risyad', 1803, 'raihan.ibrahim.tif418@polban.ac.id', '08122314136', 'https://akademik.polban.ac.id/fotomhsrekap/181524027.jpg'),
+      (181524028, 'Rayhan Azka Anandhias Putra', 1803, 'rayhan.azka.tif418@polban.ac.id', '08112341411', 'https://akademik.polban.ac.id/fotomhsrekap/181524028.jpg'),
+      (181524029, 'Riyanzani Anggara Putra', 1803, 'riyanzani.anggara.tif418@polban.ac.id', '08313134255', 'https://akademik.polban.ac.id/fotomhsrekap/181524029.jpg'),
+      (181524030, 'Roma Ulina Pasaribu', 1803, 'roma.ulina.tif418@polban.ac.id', '08522314151', 'https://akademik.polban.ac.id/fotomhsrekap/181524030.jpg'),
+      (181524031, 'Zara Veda Mahendra', 1803, 'zara.veda.tif418@polban.ac.id', '08122222244', 'https://akademik.polban.ac.id/fotomhsrekap/181524031.jpg'),
+      (181524032, 'Zefan Gracio Aritonang', 1803, 'zefan.gracio.tif418@polban.ac.id', '08184847488', 'https://akademik.polban.ac.id/fotomhsrekap/181524032.jpg')
       `
     )
     await queryInterface.sequelize.query(
