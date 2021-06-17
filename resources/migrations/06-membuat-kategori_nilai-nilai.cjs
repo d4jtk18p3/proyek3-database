@@ -33,7 +33,7 @@ module.exports = {
         autoIncrement: true
       },
       bobot_nilai: {
-        type: Sequelize.STRING,
+        type: Sequelize.DOUBLE,
         allowNull: false
       }
     });
@@ -63,7 +63,7 @@ module.exports = {
         onDelete: 'set null'
       },
       nilai: {
-        type: Sequelize.INTEGER
+        type: Sequelize.DOUBLE
       },
     });
   },
