@@ -36,6 +36,11 @@ module.exports = {
       }
     });
     await queryInterface.createTable('Nilai', {
+      id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+      },
       kode_kategori: {
         type: Sequelize.STRING,
         allowNull: false,
