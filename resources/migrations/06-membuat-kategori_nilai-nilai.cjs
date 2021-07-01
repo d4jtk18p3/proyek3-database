@@ -52,7 +52,7 @@ module.exports = {
         onDelete: 'cascade'
       },
       nim: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false,
         references:{
           model:'Mahasiswa',
