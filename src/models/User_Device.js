@@ -1,0 +1,12 @@
+import Sequelize from 'sequelize'
+import db from '../db'
+
+const UserDevice = db.define('User_Device', {
+  token: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    primaryKey: true
+  }
+})
+
+export default UserDevice

@@ -7,6 +7,8 @@ const dosen = require('./models/Dosen')
 const jabatan = require('./models/Jabatan')
 const jurusan = require('./models/Jurusan')
 const studi = require('./models/Studi')
+const user = require('./models/user')
+const userDevice = require('./models/User_Device')
 
 const setAssociations = () => {
   programStudi.hasMany(mataKuliah, {
@@ -56,6 +58,9 @@ const setAssociations = () => {
   })
   jurusan.hasMany(programStudi, {
     foreignKey: 'kode_jurusan'
+  })
+  user.hasMany(userDevice, {
+    foreignKey: 'id_user'
   })
 }
 
