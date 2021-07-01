@@ -51,12 +51,12 @@ module.exports = {
         onUpdate: 'cascade',
         onDelete: 'cascade'
       },
-      id_studi: {
+      nim: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references:{
-          model:'Studi',
-          key:'id',
+          model:'Mahasiswa',
+          key:'nim',
         },
         onUpdate: 'cascade',
         onDelete: 'set null'
