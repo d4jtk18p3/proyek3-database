@@ -9,6 +9,7 @@ const jurusan = require('./models/Jurusan')
 const studi = require('./models/Studi')
 const user = require('./models/user')
 const userDevice = require('./models/User_Device')
+const grup = require('./models/Grup')
 
 const setAssociations = () => {
   programStudi.hasMany(mataKuliah, {
@@ -61,6 +62,9 @@ const setAssociations = () => {
   })
   user.hasMany(userDevice, {
     foreignKey: 'id_user'
+  })
+  grup.hasMany(userDevice, {
+    foreignKey: 'nama_grup'
   })
 }
 

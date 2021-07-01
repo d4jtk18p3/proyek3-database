@@ -39,6 +39,14 @@ module.exports = {
           key: 'id'
         },
       },
+      nama_grup: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        references: {
+          model: 'Grup',
+          key: 'nama'
+        },
+      },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE
     })
