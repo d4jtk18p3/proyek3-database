@@ -10,6 +10,10 @@ const User = db.define('User', {
   email: {
     type: Sequelize.STRING,
     allowNull: false
+  },
+  nama_grup: {
+    type: Sequelize.STRING,
+    allowNull: false
   }
 })
 

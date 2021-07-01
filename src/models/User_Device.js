@@ -6,6 +6,10 @@ const UserDevice = db.define('User_Device', {
     type: Sequelize.STRING,
     allowNull: false,
     primaryKey: true
+  },
+  id_user: {
+    type: Sequelize.STRING,
+    allowNull: false
   }
 })
 
