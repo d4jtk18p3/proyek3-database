@@ -22,6 +22,14 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      nama_grup: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        references: {
+          model: 'Grup',
+          key: 'nama'
+        },
+      },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE
     })
@@ -37,14 +45,6 @@ module.exports = {
         references: {
           model: 'User',
           key: 'id'
-        },
-      },
-      nama_grup: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        references: {
-          model: 'Grup',
-          key: 'nama'
         },
       },
       createdAt: Sequelize.DATE,

@@ -63,7 +63,7 @@ const setAssociations = () => {
   user.hasMany(userDevice, {
     foreignKey: 'id_user'
   })
-  grup.hasMany(userDevice, {
+  grup.hasMany(user, {
     foreignKey: 'nama_grup'
   })
 }
