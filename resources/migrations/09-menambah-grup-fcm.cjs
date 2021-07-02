@@ -1,5 +1,4 @@
-'use strict';
-
+'use strict'
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
@@ -20,7 +19,7 @@ module.exports = {
       },
       email: {
         type: Sequelize.STRING,
-        allowNull: false,
+        allowNull: false
       },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE
@@ -37,7 +36,7 @@ module.exports = {
         references: {
           model: 'User',
           key: 'id'
-        },
+        }
       },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE
@@ -49,7 +48,7 @@ module.exports = {
         references: {
           model: 'Grup',
           key: 'nama'
-        },
+        }
       },
       id_user: {
         type: Sequelize.STRING,
@@ -65,8 +64,9 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable('User_Group')
     await queryInterface.dropTable('User_Device')
     await queryInterface.dropTable('User')
     await queryInterface.dropTable('Grup')
   }
-};
+}
