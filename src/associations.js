@@ -10,8 +10,6 @@ import studi from './models/Studi'
 import user from './models/user'
 import userDevice from './models/User_Device'
 import grup from './models/Grup'
-import Sequelize from 'sequelize'
-import sequelize from './db'
 
 const setAssociations = async () => {
   programStudi.hasMany(mataKuliah, {
