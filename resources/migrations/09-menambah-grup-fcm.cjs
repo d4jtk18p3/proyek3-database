@@ -22,14 +22,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-      nama_grup: {
-        type: Sequelize.STRING,
-        allowNull: false,
-        references: {
-          model: 'Grup',
-          key: 'nama'
-        },
-      },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE
     })
@@ -49,6 +41,24 @@ module.exports = {
       },
       createdAt: Sequelize.DATE,
       updatedAt: Sequelize.DATE
+    })
+    await queryInterface.createTable('User_Group', {
+      nama_grup: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        references: {
+          model: 'Grup',
+          key: 'nama'
+        },
+      },
+      id_user: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        references: {
+          model: 'User',
+          key: 'id'
+        }
+      },
     })
   },
 

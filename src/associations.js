@@ -63,9 +63,13 @@ const setAssociations = () => {
   user.hasMany(userDevice, {
     foreignKey: 'id_user'
   })
-  grup.hasMany(user, {
+  user.belongsToMany(grup, {
+    through: 'User_Group',
+    foreignKey: 'id_user'
+  })
+  grup.belongsToMany(user, {
+    through: 'User_Group',
     foreignKey: 'nama_grup'
   })
 }
-
 module.exports = setAssociations
