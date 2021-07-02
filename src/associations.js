@@ -1,17 +1,19 @@
-const mataKuliah = require('./models/Mata_Kuliah')
-const programStudi = require('./models/Program_Studi')
-const mahasiswa = require('./models/Mahasiswa')
-const kelas = require('./models/Kelas')
-const perkuliahan = require('./models/Perkuliahan')
-const dosen = require('./models/Dosen')
-const jabatan = require('./models/Jabatan')
-const jurusan = require('./models/Jurusan')
-const studi = require('./models/Studi')
-const user = require('./models/user')
-const userDevice = require('./models/User_Device')
-const grup = require('./models/Grup')
+import mataKuliah from './models/Mata_Kuliah'
+import programStudi from './models/Program_Studi'
+import mahasiswa from './models/Mahasiswa'
+import kelas from './models/Kelas'
+import perkuliahan from './models/Perkuliahan'
+import dosen from './models/Dosen'
+import jabatan from './models/Jabatan'
+import jurusan from './models/Jurusan'
+import studi from './models/Studi'
+import user from './models/user'
+import userDevice from './models/User_Device'
+import grup from './models/Grup'
+import Sequelize from 'sequelize'
+import sequelize from './db'
 
-const setAssociations = () => {
+const setAssociations = async () => {
   programStudi.hasMany(mataKuliah, {
     foreignKey: 'kode_program_studi'
   })
@@ -48,7 +50,7 @@ const setAssociations = () => {
   dosen.hasMany(jurusan, {
     foreignKey: 'nip'
   })
-  dosen.hasMany(jabatan, {
+  dosen.belongsToMany(jabatan, {
     through: 'menjabat'
   })
   programStudi.hasMany(mataKuliah, {
@@ -72,4 +74,4 @@ const setAssociations = () => {
     foreignKey: 'nama_grup'
   })
 }
-module.exports = setAssociations
+export default setAssociations

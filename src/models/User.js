@@ -10,11 +10,14 @@ const User = db.define('User', {
   email: {
     type: Sequelize.STRING,
     allowNull: false
-  },
-  nama_grup: {
-    type: Sequelize.STRING,
-    allowNull: false
   }
-})
+},
+{
+  name: {
+    singular: 'User',
+    plural: 'Users'
+  }
+}
+)
 
 export default User

@@ -7,6 +7,13 @@ const Grup = db.define('Grup', {
     allowNull: false,
     primaryKey: true
   }
-})
+},
+{
+  name: {
+    singular: 'Grup',
+    plural: 'Grups'
+  }
+}
+)
 
 export default Grup
