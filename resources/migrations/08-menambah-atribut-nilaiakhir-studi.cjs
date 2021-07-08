@@ -9,11 +9,11 @@ module.exports = {
         type: Sequelize.DOUBLE,
         allowNull: true,
     },
-	nilai_ets', {
+	  'nilai_ets', {
         type: Sequelize.DOUBLE,
         allowNull: true,
     },
-	nilai_eas', {
+	  'nilai_eas', {
         type: Sequelize.DOUBLE,
         allowNull: true,
     }
