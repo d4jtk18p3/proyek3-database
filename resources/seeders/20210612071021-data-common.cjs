@@ -960,6 +960,12 @@ module.exports = {
       (21, '196101141992021000')
       `
     )
+    const dataStudi = parseInt((await queryInterface.sequelize.query(`SELECT COUNT(*) FROM "Studi"`))[0][0].count)
+    await queryInterface.sequelize.query(`ALTER SEQUENCE "Studi_id_seq" RESTART WITH ${dataStudi + 1}`)
+    const dataPerkuliahan = parseInt((await queryInterface.sequelize.query(`SELECT COUNT(*) FROM "Perkuliahan"`))[0][0].count)
+    await queryInterface.sequelize.query(`ALTER SEQUENCE "Perkuliahan_id_seq" RESTART WITH ${dataPerkuliahan + 1}`)
+    const dataJabatan = parseInt((await queryInterface.sequelize.query(`SELECT COUNT(*) FROM "Jabatan"`))[0][0].count)
+    await queryInterface.sequelize.query(`ALTER SEQUENCE "Jabatan_id_seq" RESTART WITH ${dataJabatan + 1}`)
   },
 
   down: async (queryInterface, Sequelize) => {
