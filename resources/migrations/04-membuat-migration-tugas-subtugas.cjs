@@ -45,13 +45,13 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       durasi: {
-        type: Sequelize.DATE
+        type: Sequelize.INTEGER
       },
       skala_pemahaman: {
         type: Sequelize.STRING
       },
       catatan: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       lampiran: {
         type: Sequelize.STRING
@@ -60,7 +60,7 @@ module.exports = {
         type: Sequelize.DATE
       },
       status_subtugas: {
-        type: Sequelize.STRING
+        type: Sequelize.BOOLEAN
       },
       tenggat: {
         type: Sequelize.DATE
